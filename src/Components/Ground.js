@@ -5,7 +5,7 @@ import { useGLTF } from "@react-three/drei";
 
 export function Ground(props) {
 
-  const { nodes, materials } = useGLTF("/Models/Apartment.glb");
+  const { nodes, materials } = useGLTF("./Models/Apartment.glb");
   return (
     <RigidBody {...props} type="fixed" colliders={false} >
       <group {...props} dispose={null} scale={0.0015} position={[0, -0.5, 0]}>

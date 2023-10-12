@@ -9,7 +9,7 @@ import gsap from 'gsap'
 import { useFrame } from '@react-three/fiber'
 
 export const Rosalia = (props) => {
-  const { nodes, materials } = useGLTF('/Models/Rosalia.glb')
+  const { nodes, materials } = useGLTF('./Models/Rosalia.glb')
   const ref = useRef();
   const tl = useRef();
 
@@ -358,4 +358,4 @@ export const Rosalia = (props) => {
   )
 }
 
-useGLTF.preload('/Models/Rosalia.glb')
+useGLTF.preload('./Models/Rosalia.glb')

@@ -12,7 +12,7 @@ import { useGLTF } from '@react-three/drei'
 
 
 const Apartment = (props) => {
-  const { nodes, materials } = useGLTF('/Models/Apartment.glb')
+  const { nodes, materials } = useGLTF('./Models/Apartment.glb')
   return (
 
     <group {...props} dispose={null}>
@@ -285,4 +285,4 @@ const Apartment = (props) => {
 
 export default Apartment
 
-useGLTF.preload('/Models/Apartment.glb')
+useGLTF.preload('./Models/Apartment.glb')

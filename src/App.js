@@ -520,7 +520,7 @@ function Experience() {
       <div className="App">
         <Canvas camera={{ near: 10, far: 1000, fov: 75 }}>
           <Suspense fallback={null}>
-          <Environment files="./test.hdr" background={true} blur={1} />
+          <Environment files="./HDR/Gradient.hdr" background={true} blur={1} />
           </Suspense>
           <Thing />
           {showSecondOrbitControls && (
