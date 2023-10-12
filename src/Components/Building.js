@@ -22,7 +22,7 @@ const Building = () => {
             maxDistance={1000}
             maxPolarAngle={Math.PI / 2.2}
           />
-          <Environment files="./Gradient.hdr" background={true} blur={0} />
+          <Environment files="./HDR/Gradient.hdr" background={true} blur={0} />
           <Rosalia />
         </Canvas>
         <Modal opened={opened} onClose={close} fullScreen>
