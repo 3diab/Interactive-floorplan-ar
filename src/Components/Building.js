@@ -34,6 +34,7 @@ const Building = () => {
             camera-controls
             ar
             ar-placement="floor"
+            scale="$1 $1 $1"
             ar-modes="webxr scene-viewer quick-look"
             environment-image="neutral"
             exposure="0.5"
@@ -41,6 +42,9 @@ const Building = () => {
             shadow-softness="0.5"
             ios-src="./Models/Rosalia.usdz"
           ></model-viewer>
+          <script>
+          const modelViewerTransform = document.querySelector("model-viewer#transform").scale = '$0.01 $0.01 $0.01';
+          </script>
         </Modal>
         <Button
           onClick={open}
