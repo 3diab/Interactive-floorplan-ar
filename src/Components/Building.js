@@ -33,6 +33,7 @@ const Building = () => {
             auto-rotate
             camera-controls
             ar
+            ar-placement="floor"
             ar-modes="webxr scene-viewer quick-look"
             environment-image="neutral"
             exposure="0.5"

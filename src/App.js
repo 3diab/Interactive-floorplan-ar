@@ -467,7 +467,6 @@ function Thing() {
 function Experience() {
   const [cameraSettings, setCameraSettings] = useState(defaultPosition);
   const [opened, { open, close }] = useDisclosure(false);
-
   const [showSecondOrbitControls, setShowSecondOrbitControls] = useState(true);
 
   const handleButtonClick = (position) => {
@@ -612,6 +611,7 @@ function Experience() {
             auto-rotate
             camera-controls
             ar
+            ar-placement="floor"
             ar-modes="webxr scene-viewer quick-look"
             environment-image="neutral"
             exposure="0.5"
