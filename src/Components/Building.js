@@ -5,6 +5,7 @@ import { useDisclosure } from "@mantine/hooks";
 import { Modal } from "@mantine/core";
 import { Button } from "@mantine/core";
 import { Link } from "react-router-dom";
+import { useRef } from "react";
 
 const wrapperDiv = {
   width: "100vw",
@@ -13,6 +14,12 @@ const wrapperDiv = {
 
 const Building = () => {
   const [opened, { open, close }] = useDisclosure(false);
+  const modelViewerRef = useRef(null);
+
+  const updateScale = (value) => {
+    console.log(modelViewerRef.current.scale);
+    modelViewerRef.current.scale = `${value} ${value} ${value} `;
+  };
   return (
     <>
       <div style={wrapperDiv}>
@@ -27,6 +34,7 @@ const Building = () => {
         </Canvas>
         <Modal opened={opened} onClose={close} fullScreen>
           <model-viewer
+            ref={modelViewerRef}
             style={{ width: "100vw", height: "80vh" }}
             src="./Models/Rosalia.glb"
             alt="A 3D model of an apartment"
@@ -40,12 +48,29 @@ const Building = () => {
             exposure="0.5"
             shadow-intensity="1"
             shadow-softness="0.5"
-            ios-src="./Models/Rosalia.usdz">
-              <div class="controls" id="control">
-                <button id="1" left="90%" top="90%" onClick="updateScale1()">1:1</button>
-                <button id="20">1:20</button>
-              </div>
-            </model-viewer>
+            ios-src="./Models/Rosalia.usdz"
+          >
+            <div className="controls" id="control">
+              <button
+                id="1"
+                left="90%"
+                top="90%"
+                onClick={() => {
+                  updateScale(1);
+                }}
+              >
+                1:1
+              </button>
+              <button
+                id="20"
+                onClick={() => {
+                  updateScale(2);
+                }}
+              >
+                1:20
+              </button>
+            </div>
+          </model-viewer>
         </Modal>
         <Button
           onClick={open}
@@ -55,7 +80,8 @@ const Building = () => {
             top: "10%",
             zIndex: 1,
             transform: "translate(-50%, -50%)",
-          }}>
+          }}
+        >
           AR
         </Button>
         <Link to="/">
@@ -73,14 +99,6 @@ const Building = () => {
         </Link>
       </div>
       <Loader />
-      <script>
-      const Transform = document.querySelector("model-viewer#transform");
-      
-      function updateScale1 () {
-        Transform.scale = `$1 $1 $1`;
-      }
-
-      </script>
     </>
   );
 };
