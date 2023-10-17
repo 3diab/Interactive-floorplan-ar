@@ -289,4 +289,4 @@ export function OneRoomApartment(props) {
   );
 }
 
-useGLTF.preload("/Models/OneRoomApartment.glb");
+useGLTF.preload("./Models/OneRoomApartment.glb");

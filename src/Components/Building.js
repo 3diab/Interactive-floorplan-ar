@@ -49,7 +49,7 @@ const Building = () => {
             shadow-intensity="1"
             shadow-softness="0.5"
             ios-src="./Models/Rosalia.usdz"
-          >
+          > { /*
             <div className="controls" id="control">
               <button
                 id="1"
@@ -70,6 +70,7 @@ const Building = () => {
                 1:20
               </button>
             </div>
+              */ }
           </model-viewer>
         </Modal>
         <Button
@@ -102,5 +103,7 @@ const Building = () => {
     </>
   );
 };
+
+
 
 export default Building;
