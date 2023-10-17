@@ -40,11 +40,12 @@ const Building = () => {
             exposure="0.5"
             shadow-intensity="1"
             shadow-softness="0.5"
-            ios-src="./Models/Rosalia.usdz"
-          ></model-viewer>
-          <script>
-          const modelViewerTransform = document.querySelector("model-viewer#transform").scale = '$0.01 $0.01 $0.01';
-          </script>
+            ios-src="./Models/Rosalia.usdz">
+              <div class="controls" id="control">
+                <button id="1" left="90%" top="90%" onClick="updateScale1()">1:1</button>
+                <button id="20">1:20</button>
+              </div>
+            </model-viewer>
         </Modal>
         <Button
           onClick={open}
@@ -54,8 +55,7 @@ const Building = () => {
             top: "10%",
             zIndex: 1,
             transform: "translate(-50%, -50%)",
-          }}
-        >
+          }}>
           AR
         </Button>
         <Link to="/">
@@ -73,6 +73,14 @@ const Building = () => {
         </Link>
       </div>
       <Loader />
+      <script>
+      const Transform = document.querySelector("model-viewer#transform");
+      
+      function updateScale1 () {
+        Transform.scale = `$1 $1 $1`;
+      }
+
+      </script>
     </>
   );
 };
