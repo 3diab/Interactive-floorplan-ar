@@ -1,6 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 import { Rosalia } from "../Rosalia";
-import { Environment, Loader, OrbitControls } from "@react-three/drei";
+import { Environment, Loader, OrbitControls, Sky } from "@react-three/drei";
 import { useDisclosure } from "@mantine/hooks";
 import { Modal } from "@mantine/core";
 import { Button } from "@mantine/core";
@@ -29,26 +29,26 @@ const Building = () => {
             maxDistance={1000}
             maxPolarAngle={Math.PI / 2.2}
           />
-          <Environment files="./HDR/Gradient.hdr" background={true} blur={0} />
+          <Environment files="./HDR/TestHDR.hdr" background={true} blur={0} />
+          <Sky files="./HDR/TestHDR.hdr"/>
           <Rosalia />
         </Canvas>
         <Modal opened={opened} onClose={close} fullScreen>
           <model-viewer
             ref={modelViewerRef}
             style={{ width: "100vw", height: "80vh" }}
-            src="./Models/rosalia_test16.glb"
+            src="./Models/rosalia2.glb"
             alt="A 3D model of an apartment"
             auto-rotate
             camera-controls
             ar
             ar-placement="floor"
-            scale="$1 $1 $1"
             ar-modes="webxr scene-viewer quick-look"
-            environment-image="neutral"
-            exposure="0.5"
+            environment-image="./HDR/TestHDR.hdr"
+            exposure="1"
             shadow-intensity="1"
             shadow-softness="0.5"
-            ios-src="./Models/rosalia2.usd"
+            ios-src="./Models/rosalia2.usdz"
           > { /*
             <div className="controls" id="control">
               <button
