@@ -36,7 +36,7 @@ const Building = () => {
           <model-viewer
             ref={modelViewerRef}
             style={{ width: "100vw", height: "80vh" }}
-            src="./Models/Rosalia.glb"
+            src="./Models/rosalia_test16.glb"
             alt="A 3D model of an apartment"
             auto-rotate
             camera-controls
@@ -48,7 +48,7 @@ const Building = () => {
             exposure="0.5"
             shadow-intensity="1"
             shadow-softness="0.5"
-            ios-src="./Models/Rosalia.usdz"
+            ios-src="./Models/rosalia2.usd"
           > { /*
             <div className="controls" id="control">
               <button
