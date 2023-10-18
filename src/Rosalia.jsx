@@ -329,8 +329,7 @@ export const Rosalia = (props) => {
         position={[22.459, -7.6, 9.391]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={1.038}
-      />
-      </group>     
+      />      </group>     
     )
 }
 
