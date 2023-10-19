@@ -519,7 +519,7 @@ function Experience() {
       <div className="App">
         <Canvas camera={{ near: 10, far: 1000, fov: 75 }}>
           <Suspense fallback={null}>
-          <Environment files="./HDR/Gradient.hdr" background={true} blur={1} />
+          <Environment files="./HDR/TestHDR.hdr" background={true} blur={1} />
           </Suspense>
           <Thing />
           {showSecondOrbitControls && (
@@ -614,7 +614,7 @@ function Experience() {
             ar-placement="floor"
             ar-modes="webxr scene-viewer quick-look"
             environment-image="neutral"
-            exposure="0.5"
+            exposure="1"
             shadow-intensity="1"
             shadow-softness="0.5"
             ios-src="./Models/One_Bedroom_Apartment.usdz"
